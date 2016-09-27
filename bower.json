@@ -1,0 +1,24 @@
+{
+  "name": "Contact List App",
+  "authors": [
+    "Runi Brockie <Master_RB1990@hotmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "angularjs#^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-bootstrap": "^2.1.4"
+  }
+}
