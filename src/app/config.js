@@ -1,7 +1,9 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import homeCtrl from './controllers/home.ctrl.js';
+import todoListFactory from './factories/todo-list.fctry.js';
 
-const app = angular.module('app', [uiRouter]);
+const app = angular.module('app', [uiRouter, todoListFactory.name]);
 
 app.config(($stateProvider, $urlRouterProvider, $locationProvider) => {
     $urlRouterProvider.otherwise('/');
@@ -9,7 +11,8 @@ app.config(($stateProvider, $urlRouterProvider, $locationProvider) => {
     $stateProvider
         .state('home', {
             url: '/',
-            template: require('./templates/home.tpl.html')
+            template: require('./templates/home.tpl.html'),
+            controller: homeCtrl
         })
         .state('about', {
             url: '/about',

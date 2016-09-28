@@ -6,36 +6,65 @@ module.exports = {
     entry: [
         'webpack-dev-server/client?http://127.0.0.1:8080',
         'webpack/hot/only-dev-server',
+        'bootstrap-loader',
         './src/app' // location of 'dist' file
     ],
     output: {
-        path: path.join(__dirname, '/dist'),
+        path: path.join(__dirname, 'src'),
         filename: 'bundle.js'
     },
     resolve: {
         modulesDirectories: ['node_modules', 'src'],
-        extension: ['', '.js']
+        extension: ['', '.js', '.scss']
     },
     module: {
         loaders: [
-        {
-            test: /\.js$/,
-            exclude: '/node_modules',
-            loader: 'babel',
-            query: {
-                presets: ['es2015']
+            {
+                test: /\.js$/,
+                exclude: '/node_modules',
+                loader: 'babel',
+                query: {
+                    presets: ['es2015']
+                }
+            },
+            {
+                test: /\.html$/,
+                loader: 'raw'            
+            },
+            {
+                test: /\.scss$/,
+                loaders: [
+                    'style',
+                    'css',
+                    'autoprefixer?browsers=last 3 versions',
+                    'sass?outputStyle=expanded'
+                ]
+            },
+            {
+                test: /\.less$/,
+                loaders: [
+                    'style',
+                    'css',
+                    'autoprefixer?browsers=last 3 versions',
+                    'less'
+                ]
+            },
+            {
+                test: /\.(woff2?|ttf|eot|svg)$/,
+                loader: 'url?limit=10000'
+            },
+            {
+                test: /bootstrap-sass\/assets\/javascripts?\//,
+                loader: 'imports?jQuery=jquery'
             }
-        },
-        {
-            test: /\.html$/,
-            loader: 'raw'
-            
-        }
         ]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+        new webpack.ProvidePlugin({
+            jQuery: "jquery"
+        })
     ],
     devServer: {
         hot: true,
