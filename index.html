@@ -1,14 +1,16 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<!--    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="app/dist/style/Website.css">
-    <title>Contact List App</title>
+    <link rel="stylesheet" type="text/css" href="./src/app/dist/style/Website.css">-->
+    <title>ToDo App</title>
+    <base href="/">
 </head>
 
 <body>
-    <div ng-app="MyApp">
+   <div ui-view></div>
+    <!--<div ng-app="MyApp">
 
         <section>
 
@@ -18,16 +20,17 @@
 
         </section>
 
-    </div>
+    </div>-->
     
-    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!--<script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>-->
     
-    <script src="app/dist/js/App.js"></script>
+    <!--<script src="./src/app/dist/js/App.js"></script>-->
+    <script src="bundle.js"></script>
 </body>
 
 </html>

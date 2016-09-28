@@ -1,13 +1,15 @@
 var express = require('express');
 var app = express();
-var mongoJs = require('mongojs');
+/*var mongoJs = require('mongojs');
 var db = mongoJs('contactlist', ['contactlist']);
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');*/
 
 
 app.use(express.static(__dirname)); // "/public"
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 app.listen(process.env.PORT || 3000);
+
+/*
 
 app.get('/', function(req, res){
     res.send("Hello world from server.js");
@@ -50,6 +52,7 @@ app.delete('/api/contactList/removeContact', function (req, res) {
     });
     
 });
+*/
 
 
 
